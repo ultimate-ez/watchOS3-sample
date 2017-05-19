@@ -43,8 +43,15 @@
                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <separator alignment="left" id="857-KJ-rZs"/>
-                        <label alignment="left" text="Label" id="6ES-Uh-PLV"/>
+                        <label alignment="left" text="Label" id="6ES-Uh-PLV">
+                            <color key="textColor" red="0.0" green="0.81960784310000001" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                     </items>
+                    <connections>
+                        <outlet property="crownDidBecomeIdleLabel" destination="6ES-Uh-PLV" id="lfL-ln-wbP"/>
+                        <outlet property="rotationalDeltaLabel" destination="paV-ya-dMX" id="pnX-r3-UIV"/>
+                        <outlet property="rotationsPerSecondLabel" destination="i5r-HO-B4P" id="5Bm-l4-GQS"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="468" y="122"/>
