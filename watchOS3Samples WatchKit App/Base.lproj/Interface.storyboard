@@ -1,20 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOS3Samples_WatchKit_App" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="watchOS3Samples_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="WKCrownSequencer" id="ILW-9l-o8F">
+                            <connections>
+                                <segue destination="Mii-nc-ybf" kind="push" id="4Ak-Oe-Xpd"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="122"/>
+        </scene>
+        <!--WKCrownSequencer-->
+        <scene sceneID="FVf-dA-qEl">
+            <objects>
+                <controller identifier="WKCrownSequencer" id="Mii-nc-ybf" customClass="WKCrownSequencerInterfaceController" customModule="watchOS3Samples_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="RotationDelta:" id="cog-wv-aCd">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <label alignment="left" text="0.0" id="paV-ya-dMX">
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <separator alignment="left" id="aUG-vW-mrP"/>
+                        <label alignment="left" text="rotationsPerSecond" id="5XX-FP-BHj">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <label alignment="left" text="0.0" id="i5r-HO-B4P">
+                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <separator alignment="left" id="857-KJ-rZs"/>
+                        <label alignment="left" text="Label" id="6ES-Uh-PLV"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="122"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -22,6 +55,7 @@
                 <notificationController id="YCC-NB-fut">
                     <items>
                         <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="Label" id="V6i-MH-WJr"/>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
