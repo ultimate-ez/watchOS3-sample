@@ -19,27 +19,28 @@ class WKCrownSequencerInterfaceController: WKInterfaceController, WKCrownDelegat
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
         crownSequencer.focus()
         crownSequencer.delegate = self
+        
+        crownDidBecomeIdleLabel.setText("Idle")
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
     
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
-        print("rotationalDelta:\(rotationalDelta) rotationsPerSecond:\(self.crownSequencer.rotationsPerSecond)")
+        rotationalDeltaLabel.setText(String(rotationalDelta))
+        rotationsPerSecondLabel.setText(String(self.crownSequencer.rotationsPerSecond))
+        crownDidBecomeIdleLabel.setText("Rotate!")
     }
     
     func crownDidBecomeIdle(_: WKCrownSequencer?) {
-        print("crownDidBecomeIdle")
+        crownDidBecomeIdleLabel.setText("Idle")
     }
 
 }
