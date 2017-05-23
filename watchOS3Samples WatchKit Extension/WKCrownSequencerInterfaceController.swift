@@ -36,11 +36,11 @@ class WKCrownSequencerInterfaceController: WKInterfaceController, WKCrownDelegat
     func crownDidRotate(_ crownSequencer: WKCrownSequencer?, rotationalDelta: Double) {
         rotationalDeltaLabel.setText(String(rotationalDelta))
         rotationsPerSecondLabel.setText(String(self.crownSequencer.rotationsPerSecond))
-        crownDidBecomeIdleLabel.setText("Rotate!")
+        crownDidBecomeIdleLabel.setText(String(self.crownSequencer.isIdle))
     }
     
     func crownDidBecomeIdle(_: WKCrownSequencer?) {
-        crownDidBecomeIdleLabel.setText("Idle")
+        crownDidBecomeIdleLabel.setText(String(self.crownSequencer.isIdle))
     }
 
 }
